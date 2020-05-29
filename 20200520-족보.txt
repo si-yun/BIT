@@ -1,0 +1,171 @@
+1. class 란 무엇과 무엇으로 구성되어 있는가?
+변수와 함수
+
+2.아래의 용어를 설명하시오.
+인스턴스 변수  new를 생성하는 변수
+로컬변수 class안에 변수.
+
+
+3. 클래스와 인스턴스의 차이는 무엇인가요(붕어빵틀과 붕어빵)?
+소스코드상의 클래스가 아니라 클래스는 내가 클래스를 컴파일한 .class
+4. BankAccount yoon = new BankAccount(); 의 메모리를 그리시오.
+
+
+5.아래 프로그램의 출력결과를 예측하고,메모리그림으로 설명하시오.
+
+public class BankAccount {
+	int account = 0;
+}
+
+public class BankAccountOO {
+
+	public static void check(BankAccount bank) {
+		
+		System.out.println(bank);
+		System.out.println(bank.account);
+		
+		bank.account = 90;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount yoon = new BankAccount();
+		
+		yoon.account = 10; //옥상 올라감.
+		
+		System.out.println(yoon);
+		System.out.println(yoon.account);				
+		
+		check(yoon);
+		
+		System.out.println(yoon.account);		
+	}
+
+}
+class Bankaccount 에 먼저 int로  = 을 선언해준다
+class Bankaccount00 클래스에 check의 이름으로 Bankaccountbank를  선언 
+main에 yoou이라는 새로운 메모리를 방을 만들어 준다음
+yoou.account = 10 에 대입을 한후 sout로 출력을 해주면 
+sout(yoon)에는 class에 새로운 new메모리 방을 만든 주소가 출력이 되고
+sout(yoon.account)는 인스턴스 변수 밑에 yoon.account  = 10 을 대입을 해주었으니
+ 10이 출력이 된다.
+class check yoon 를 호출하면  다시한번 메모리방의 주소가 출력이 되며
+sout(yoon,account)는 class방에  bank.account = 90;를 선언해주었으니 90으로 기존에있던
+메모리가 삭제가 되고 새로운 90이 들어서게 된다.
+
+6.1. 클래스 이름 : Triangle 
+     -인스턴스 변수 : width,height
+     - 삼각 넓이를 구하는 함수 : getArea
+     - 변수 셋팅 함수고,  Test 클래스에서
+ 테스트 하시오.
+
+public class RectriangleTest {
+
+	
+	int height;
+	int width;			//바뀔수있는 숫자라서.
+	
+	
+	void setHeight(int h) { //setter 함수. set 설정.
+		height = h;
+	}	
+	
+	void setWidth(int w) {
+		width = w;
+	}
+	
+	int getArea() {
+		int area =height*width/2;
+		return area;
+	}
+}
+
+
+public class triangle {
+
+	public static void main(String[] args) {
+
+		RectriangleTest rectriangle = new RectriangleTest();
+		
+
+		rectriangle.setHeight(70);
+		rectriangle.setWidth(10);
+		System.out.println(rectriangle.getArea());
+		
+	}
+}
+
+
+
+
+7. 클래스 이름 : Student 
+     -인스턴스 변수 : kor, eng, math
+     -setter 함수 작성 
+     - grade 함수 average 함수 작성
+     Test 클래스에서 평균과 수우미양가를 출력하는 프로그램을 작성하시오.
+
+
+	int kor,eng,math;
+	double avg;
+	
+		void setKor(int k ) {
+			kor = k;
+	}
+		void setEng(int e ) {
+			eng = e;
+	}
+		void setMath(int m ) {
+			math = m;
+	}
+		double getAvg() {
+			double avg = (kor+eng+math)/3 ;
+			return avg;
+		}
+		
+	char grade (double avg) {
+		if (avg >=90) {
+			return '수';
+		} else if (avg >=70) {
+			return '우';
+		} else if (avg >=40) {
+			return '미';
+		} else if (avg >=20) {
+			return '양';
+		} else {
+			return '가';
+		}
+		
+	}
+	
+}
+	
+
+
+
+
+public class Student {
+
+	public static void main(String[] args) {
+
+			StudentTest stu = new StudentTest();
+			
+				
+			stu.setKor(70);
+			stu.setEng(70);
+			stu.setMath(100);
+			System.out.println(stu.getAvg());
+			System.out.println(stu.grade(stu.getAvg()));
+	}
+	
+		
+			
+	}
+
+
+
+
+
+8.재귀함수란 무엇인가?
+팩토리얼 함수.
+자기 자긴을 반복적으로 호출하는것 
+

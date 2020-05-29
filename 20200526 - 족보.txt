@@ -1,0 +1,102 @@
+1.메써드 오버로딩 이란?
+똑같은 함수 이름으로 차입과 파라미터 갯수로 다르게 정의 할수있다.
+
+2.메써드 오버로딩의 대표적인 예와,메써드 오버로딩시 달리해야할 2가지는?
+System.out.**println** 함수 오버로딩의 가장 대표적인 예
+
+inst.simple(7,'K')
+3.this는 무엇이며, This의 용도 2가지는?
+this함수는 생성자 함수,
+this 자기자신의 함수 호출할때 사용
+
+4.문자열 생성의 두가지 방법은?
+객채변수를 통한 호출과 
+일반 sout표현 
+
+5.아래의 차이는?
+ String str1 = new String("Simple String");
+새로운 메모리를 만들어 simple string 의로 str1에 대입 
+ String str2 = "Simple String";
+바로 simplestring을 str2로 대입 
+
+6. 아래가 false 를 리턴하는 이유와 true로 리턴하게 할려면?
+if(str1 == str2)
+String str1 = "Simple String";
+ String str2 = "Simple String";
+참조 변수와 참조값의 비교이기 때문에 
+주소가 달라 false 
+
+7.문제 11-1(263page) 프로그램을 작성하시오.
+
+String str = ("9909025".concat(" ").concat("1012999");
+
+8.String 과 StringBuffer 의 차이는?
+StringBuffer 클래스는 내부적으로 문자열을 저장하기 위한 메모리공간을 지닌다.
+String클래스의 메모리 공간과 달리 문자를 추가하거나 삭제하는것이 가능하다.
+
+9.아래를 String 함수등을 사용하여 프로그래밍 하시오.
+//1. 마지막 3글자 자르기
+String str = "ABCDEFG"; 
+String result = 소스코딩      
+System.out.println(result)
+ //결과값EFG
+
+
+String str = "ABCDEFG"; 
+		String result = str.substring(4);     
+		System.out.println(result);
+		 //결과값EFG
+
+11.아래를 String 함수등을 사용하여 프로그래밍 하시오.
+//2. 특정문자 이후의 문자열 제거
+String str = "ABCD/DEFGH";
+String result = 소스코딩
+System.out.println(result); 
+//결과값 DEFGH
+
+//2. 특정문자 이후의 문자열 제거
+		String str1 = "ABCD/DEFGH";
+		String result1 = str1.substring(5);
+		System.out.println(result1); 
+		//결과값 DEFGH
+		
+
+12. 아래를 프로그래밍 하시오.
+Rectangle r1 = new Rectangle(5,6);
+Rectangle r2 = new Rectangle(7,9);
+
+Rectangle r3 = Rectangle.compareRect(r1,r2);
+
+System.out.println(r3.getHeight() + " : " + r3.getWidth()  + "입니다.");
+=============================
+출력 : 9 : 7 입니다.
+ 
+
+
+public class Rectangle {
+
+	int width;
+	int height;
+
+	Rectangle(int i ,int j){
+		this.width = i;
+		this.height = j;
+
+	}
+	public int getHeight() {
+		return height;
+	}
+	public int getWidth() {
+		return width;
+	}
+	static Rectangle compareRect(Rectangle r1,Rectangle r2) {
+		Rectangle c = null;
+		if(r1.height>r2.height && r1.width > r2.width) {
+			c = r1;
+		}else {
+			c = r2;
+		} return c;
+		
+		
+
+ 

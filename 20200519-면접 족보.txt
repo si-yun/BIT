@@ -1,0 +1,101 @@
+1.함수의 구성요소 4가지에 대하여 설명하시오.
+int add(int num1, int num2)
+{
+	int re = num1+ num2;
+	return re;
+}
+
+		1 . int 반환형 _리턴 타입
+		2 . add함수의 이름 _ {}메인함수 빼고 프로그래밍
+		3 . 매개 변수 (파라미터)_ 바디가 없으면 함수 선언 하고 바디가 없으면 함수 구현함
+		4 . 값의 변화 (리턴값)_값의 변환이 이루어짐 
+ 
+2. 함수 구현과, 함수 호출의 다른 점은 무엇인가요?
+함수 호출 은 정의된 메소드를 어떻게 실행하는지 
+함수 구현은 메소드의 고유기능을 수행하는 명령문의 집합.
+
+3. 함수 선언이란?
+변수나 정수를 메모리에 대입하는것
+
+4. return 의 두가지 의미는?
+목표달성하여 리턴값에 도달하면
+{}를 벗어나서 다음 문장에서 실행출력
+
+5. 국어, 영어 수학 점수변수 선언후 평균과 합계를 출력하고 수우미양가를 출력하는 프로그램을 작성하시오(외우세요).
+average 함수와 grade 함수는 작성해서 호출할것.
+
+	public static double avgGrade(double avg) {
+		if(avg>=95) {
+			System.out.println(avg+"90 점 이상이니 수 입니다.");
+		}else if (avg >=70) {
+			System.out.println(avg+"70 점 이상이니 우 입니다.");
+		}else if (avg >=50) {
+			System.out.println(avg+"50 점 이상이니 미 입니다.");
+		}else if (avg >=30) {
+			System.out.println(avg+"30 점 이상이니 양 입니다.");
+		}else {
+			System.out.println(avg+"10 점 이상이니 가 입니다.");
+		}
+		return avg;
+					
+		}
+	public static void main(String[] args) {
+		 int kor = 55,eng = 21, math = 1;
+		 double sum = (kor+eng+math);
+		 double avg = sum/3;
+		 avgGrade (avg);
+		 System.out.println("국어 영어 수학 의 합계 점수는 "+sum+"이고 평균은 "+avg+" 점 입니다.");
+
+			}
+}
+6. 142 page 문제 1 번 2번 .
+
+
+7. 정수 하나를 입력 받아 아래와 같은 별찍기를 함수를 만드시오.
+3을 받으면(3층탑)
+*
+**
+***
+4을 입력 받으면(4층탑)
+*
+**
+***
+****
+8.정수 하나를 입력 받아 입력받은 수가 8이면 1부터8단까지 구구단 출력하는 함수를 작성하시오.
+public static void gudan(int i) {// 변수 값 i로 선언 
+		for(int heng = 2 ; heng <=9 ; heng++) {
+			//        2는 9와 같거나 커질때까지 1씩 더해서 반복.
+			for(int dan = 2; dan<=i;dan++) {
+				//   2는 i값보다 같거나 커질때까지 1씩 더해서 반복.
+					System.out.print(dan+"*"+heng+"="+heng*dan+"\t");
+			
+			}System.out.println(" ");
+			
+		}
+	}
+	
+
+9.정수 하나를 입력받아 1 부터 입력받은 수까지 합을 구하는 함수를 작성하시오.
+
+public static void ssum(int i) {
+		int sum = 0;
+		for(int n= 1;n<=i;n++) {
+			sum+= n;
+			System.out.println(sum);
+		}
+	}
+	
+	
+	
+
+
+10.두수를 입력 받아 아래와 같은 함수를 만드시오.
+ 5 와 10을 입력 받을시
+ 5+6+7+8+9+10 의 합을 리턴
+5< + >10
+
+
+만약 첫번째 입력값이 두번째 입력값보다 같거나 작을경우
+프로그램 에러입니다 출력 하도록 할것.
+11. 두수를 입력 받은후 두수의 최소 공배수를 리턴하는 함수를 만드시오. 두수가 같거나 하나라도 음수이면 프로그램 실행 안됨이라고 출력 할것.
+12.정수하나를 입력받아 해당 입력받은 수의  구구단 을 출력하시오. 8이면 8단 .. 7이면 7단 .. 

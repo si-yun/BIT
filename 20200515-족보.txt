@@ -1,0 +1,176 @@
+  
+1. 80 과 90 중 큰수를 출력하는 프로그램을 작성하시오.
+int num = 80 , num1 = 90 ;
+		if (num>num1) {
+			System.out.println(num+" ,"+num1+"중에 큰수는?"+num);
+		}else
+			System.out.println(num+","+num1+"중에 큰수는?"+num1);		
+2. 국어 70, 수학 60 ,영어 70 의 총점과 평균을 출력하고, ********
+평균에 대한 수우미양가를 출력하는 프로그램을 작성하시오.
+		int num = 70 , num1 = 60 , num2 = 70 ;
+		int sum1 = (num+num1+num2);
+			System.out.println("3과목의 총점은 "+sum1+"입니다");
+		int Average = sum1/3;
+		System.out.println("3과목의 평균은 "+Average+"입니다");
+		
+		if (Average >=90) {
+			System.out.println("평가 점수는  "+'수'+"  입니다");
+	}	else if (Average >=70)
+		System.out.println("평가 점수는  "+'우'+"  입니다");
+		else if (Average >=50)
+			System.out.println("평가점수는  "+'미'+"  입니다");
+		else if (Average <=25)
+			System.out.println("평가점수는 "+'양'+"  입니다");
+		else
+			System.out.println("평가 점수는  "+'가'+"  입니다");
+
+3.변수 3개를 선언후 값을 할당 하여, 3개중 MAX 값을 출력하는 프로그램을 작성하시오.
+
+//		int num3 = 100, num4 = 377 , num5 = 210;
+//		
+//		if (num3<num5&num4<num5)  {
+//			System.out.println("최대값은 "+ num5);
+//		} else if(num3<num4) {
+//			System.out.println("최대값은"+num4);
+//					}
+//		else 
+//			System.out.println("최대값은 "+num3);
+
+*** MAX= (a>b && a>c)? a : (b>c)?b:c;
+
+	if (a>= b && a>=c) {
+				max = a;
+			}else if (b>=a && b>=c) {
+				max = b;
+			}else {
+				max
+				= c;
+			}
+			
+4. switch 문의 동작 방식에 대하여 설명하시오.(걸어서 하늘까지)
+걸리면 브레이크 까지
+
+5. do while 과 while 문의 차이는?
+while문은 결과가 true이면 중괄호 영역 실행
+do while문은 조건 검사 후 결과가 true이면 반복 결정
+
+6. for 문의 실행 순서를 설명하시오.
+for문안에 변수를 먼저 선언을 한후 선언 변수와 목표값의 크기를 출력후 선언변수에 1을 더함
+더한후 목표값에 대한 크기를 다시 비교 출력 +1 순서대로
+
+
+7.do while 문과 while 문을 이용 하여, 9단을 찍으시오.
+while
+//		int num = 1;
+//		while(num<10) {
+//			System.out.println('9'+"*"+num+"="+9*num);
+//			num++;
+//		}	
+//		
+do while
+//		int num = 1;
+//		do {
+//			System.out.println('9'+"*"+num+"="+9*num);
+//			num++;
+//		} while (num<10);
+//		
+
+
+8.구구단 6단 중 짝수만(6*2, 6*4, 6*6,6*8) 찍으시오.
+
+//		int num  = 6;
+//		for (int i = 2 ; i <10 ; i+=2) {
+//		int X = (num * i);
+//		System.out.println(X);
+//		}
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------
+//package ExEx;
+//
+//public class ExFor0515 {
+//
+//	public static void main(String[] args) {
+//				//구구단 3단 
+//				//1~100의 합
+//				//1~20까지 짝수의 합
+//	//1.구구단 3단
+//		int s = 3;
+//		for (int k = 1 ; k <=9; k++) {
+//		int	x = s * k;
+//			System.out.println('3'+"*"+k+"="+x);
+//		}
+//	
+//		
+//	//2.1~100까지 합	
+//		int num1 = 0;	
+//		for( int z= 1; z<=100; z++) {
+//		num1 = z+num1;
+//		System.out.println(num1);
+//		}
+//		
+//		
+//	//3. 1~20의 짝수의 합
+//		int num = 0;
+//		for(int i = 1; i <= 20; i++) {
+//			
+//			if(i%2==0) {
+//			num = i+num;
+//			System.out.println(num);
+//  }
+//	}
+//	}
+//		int num = 30 , num1 = 30 , num2 = 30 ;
+//		int sum1 = (num+num1+num2);{
+//			System.out.println("3과목의 총점은 "+sum1+"입니다");
+//		int Average = sum1/3;
+//		System.out.println("3과목의 평균은 "+Average+"입니다");
+//		
+//		if (Average >=90) {
+//			System.out.println("평가 점수는  "+'수'+"  입니다");
+//	}	else if (Average >=70)
+//		System.out.println("평가 점수는  "+'우'+"  입니다");
+//		else if (Average >=50)
+//			System.out.println("평가점수는  "+'미'+"  입니다");
+//		else if (Average >=25)
+//			System.out.println("평가점수는 "+'양'+"  입니다");
+//		else
+//			System.out.println("평가 점수는  "+'가'+"  입니다");
+//		}
+//	}
+//}	
+		
+//		int num3 = 100, num4 = 377 , num5 = 210;
+//		
+//		if (num3<num5&num4<num5)  {
+//			System.out.println("최대값은 "+ num5);
+//		} else if(num3<num4) {
+//			System.out.println("최대값은"+num4);
+//					}
+//		else 
+//			System.out.println("최대값은 "+num3);
+//	 구구단 9단 
+//		int num = 1;
+//		while(num<10) {
+//			System.out.println('9'+"*"+num+"="+9*num);
+//			num++;
+//		}	
+//		
+//		int num = 1;
+//		do {
+//			System.out.println('9'+"*"+num+"="+9*num);
+//			num++;
+//		} while (num<10);
+//		
+//		
+//				
+//				  int num = 6; 
+//				  for (int i = 2 ; i <10 ; i+=2) { 
+//				  int X = (num * i);
+//				  System.out.println(num+"*"+i+"="+X); }
+//				 
+

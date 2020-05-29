@@ -1,0 +1,111 @@
+1. static 함수에 인스턴스 라면(변수,함수)이 올수 없는 이유?
+메모리 생성 시기가 다름 (시간차이가 남)
+static에서 없는 변수 (메모리에 올라가 있지도 않은)를 쓰려고 하니까 안됨.
+
+2. 클래스 변수, 공유변수, static 변수를 각각의 의미를 설명하시오.
+클래서 변수
+-인스턴스 생성없이 클래서 이름 클래스 변수명으로 접근.
+-클래스가 로딩될 때 생성이 되고 프로그램이 종료될때 소멸
+static 변수
+-클래스 내에 정의된 메소드에 static선언을 하면 클래스 메소드가 된다
+-접근방법이 클래스 변수와 동일하며 인스턴스 생성 이전부터 호출이가능하다.
+-어느 인스턴스에도 속하지 않은 메소드라는 점이 클래스 변수와 동일 하다.
+공유변수 
+-static으로 선언된 변수는 변수가 선언된 같은 클래스의 모든 인스턴스들이 공유하는 변수..
+
+
+
+3. 클래스 함수는 어떠한 경우에 만들어 주는 것이 좋은가?
+인스턴스간에 연관이있는 변수와 함수를  구룹화를 시키며 
+객체 단위의 중복 코드를 제거 및 코드의 재사용을 하기위해 
+
+4. 클래스 변수는 어떠한 경우에 만들어 주는 것이 좋은가?
+인스턴스간에 데이터 공유가 필요한 상황에서 클래스 변수를 선언한다.
+5.금일 배운 CardTest 의 메모리 영역을 그리시오(외우세요).
+
+
+6.다음을 프로그래밍 하시오.
+
+int Radius;
+	
+	Circle(int Radius) {
+		this.Radius = Radius;
+		
+	}
+	static Circle maxCircle(Circle c1,Circle c2,Circle c3) {
+		Circle max = null;
+		
+		if(c1.Radius > c2.Radius && c1.Radius>c3.Radius) {
+			max =c1;
+		}else if(c2.Radius>c1.Radius&&c2.Radius>c3.Radius) {
+			max = c2;
+		}else if(c3.Radius>c1.Radius&&c3.Radius>c2.Radius) {
+			max = c3;
+		}else {
+			System.out.println("알수없습니다.");
+		}
+		return max;
+	}
+	
+	}
+
+
+
+
+
+
+
+
+Circle c1 = new Circle (6);
+Circle c2 = new Circle (7);
+Circle c3 = new Circle (8);
+
+Circle max = Circle.maxCircle(c1,c2,c3);
+
+Sysout.out.println(max.radius)
+
+======================
+출력 : 8
+
+7. 컴파일러가 자동으로 하는거 2가지는?
+import.
+(java.lang.)System.out.println에서 java.lang클래스 명이있지만 
+자바에서 자동으로 컴파일러 해줌.
+ 
+8.다음을 프로그래밍 하시오
+Sysout.out.println(MyCalculator.add(1, 2));	
+Sysout.out.println(MyCalculator.min(1, 2));
+
+int num1;
+	int num2;
+	
+	MyCalculator(int num1,int num2){
+		this.num1=num1;
+		this.num2=num2;
+		
+	}
+	
+	static int add(int num1,int num2) {
+		return num1+num2;
+		
+	}
+	static int min(int num1,int num2) {
+		return num1-num2;
+		
+	}
+	
+}
+
+
+
+
+
+출력: 
+3
+-1
+
+
+
+
+
+
