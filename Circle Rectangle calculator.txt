@@ -1,0 +1,153 @@
+Circle
+
+Circle c1 = new Circle (6);
+Circle c2 = new Circle (7);
+Circle c3 = new Circle (8);
+
+Circle max = Circle.maxCircle(c1,c2,c3);
+
+Sysout.out.println(max.radius)
+----------------------------------------------
+
+int Radius;
+	
+	Circle(int Radius) {
+		this.Radius = Radius;
+		
+	}
+	static Circle maxCircle(Circle c1,Circle c2,Circle c3) {
+		Circle max = null;
+		
+		if(c1.Radius > c2.Radius && c1.Radius>c3.Radius) {
+			max =c1;
+		}else if(c2.Radius>c1.Radius&&c2.Radius>c3.Radius) {
+			max = c2;
+		}else if(c3.Radius>c1.Radius&&c3.Radius>c2.Radius) {
+			max = c3;
+		}else {
+			System.out.println("알수없습니다.");
+		}
+		return max;
+	}
+	
+	}
+
+
+--------------------------------------------------------------------
+Rectangle
+
+public class Rectangle {
+
+	int width;
+	int height;
+
+	Rectangle(int i ,int j){
+		this.width = i;
+		this.height = j;
+
+	}
+	public int getHeight() {
+		return height;
+	}
+	public int getWidth() {
+		return width;
+	}
+	static Rectangle compareRect(Rectangle r1,Rectangle r2) {
+		Rectangle c = null;
+		if(r1.height>r2.height && r1.width > r2.width) {
+			c = r1;
+		}else {
+			c = r2;
+		} return c;
+------------------------------------------------------------------------------
+Rectangle r1 = new Rectangle(5,6);
+Rectangle r2 = new Rectangle(7,9);
+
+Rectangle r3 = Rectangle.compareRect(r1,r2);
+
+System.out.println(r3.getHeight() + " : " + r3.getWidth()  + "입니다.");
+=============================
+출력 : 9 : 7 입니다.		
+		
+
+------------------------------------------------------------------------------
+Calculator
+
+import java.util.Scanner;
+
+public class Calculator {
+
+	int i;
+	String math;
+	int j;
+	int d = 0;
+	
+	public static int add(int i,int j) {
+		return i+j;
+	}
+	public static int min(int i,int j) {
+		return i-j;
+	}
+	public static int mul(int i,int j) {
+		return i*j;
+	}
+	public static int div(int i,int j) {
+		return i/j;
+	}
+	public void excute() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("첫번째 수 입력");
+		this.i = sc.nextInt();
+		
+		System.out.println("+-*/");
+		this.math = sc.next();
+		
+		System.out.println("두번째 수 입력");
+		this.j = sc.nextInt();
+		
+		switch(math) {
+		
+		case("+"):
+			d = add(i,j);
+		  	break;
+		case("-"):
+			d = min(i,j);
+		  	break;
+		case("*"):
+			d = mul(i,j);
+		  	break;
+		case("/"):
+			d = div(i,j);
+		  	break;
+		  	
+		  	
+		}
+		System.out.println(i+math+j+"="+d);
+		System.out.println("ㄱ?ㄴ?");
+		String a = sc.next();
+		switch(a) {
+	case("y"):
+		excute();
+	  	break;
+	case("Y"):
+		excute();
+	  	break;
+	case("X"):
+		excute();
+	  	break;
+	case("x"):
+		excute();
+	  	break;
+	
+	}
+	}
+}
+
+10개의 배열을 선언후 1부터 100까지의 수를 랜덤하게 생성하여 10개의 배열에 넣는다 
+아래의 max변수에 해당배열의 값중에 최대값을 반환하는 함수를 만드시오 
+
+int[]arr=new int[10];
+:,,,
+int max = getMaxValue(arr)
