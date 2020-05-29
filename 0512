@@ -1,0 +1,48 @@
+면접 족보
+2020.05.12
+
+1.일반 프로그램이 (옆의 하드웨어 용어를 사용하여) 실행 되는 원리를 설명하시오.(CPU,메모리,HDD )
+-
+HDD에 있는 .class파일을 메모리로 옮긴후 CPU가 읽을 수있는 컴파일하고 저장이 되고 CPU에서는
+메모리에 .class파일의 주소로 관리를 한다
+ 
+2.메모장으로 HelloWorld 컴파일및 실행을 하세요.(이번에 외웁시다)
+class HelloWorld {                             
+public static void main (String[] args) {  
+System.out.println("HelloWorld");
+}                                                 
+}
+- 저장후 cmd에 javac HelloWorld.java 
+- java HelloWorld
+출력 
+
+3.컴파일 과정이 필요한 이유는?
+CPU가 접근할수있는 이진수로 변환을하기위해 
+
+4.메모장으로 아래의 프로그램을 작성하시오.(println 함수만 사용 할것)
+-반지름의 넓이가 10인 넓이를 구하시오.출력은 아래와 같이 나올것
+    반지름이 10인 원 넓이는 314 입니다.
+ {
+public static void main(String[] args) {
+	System.out.println("반지름이 10인 원 넓이는" *3.14 +"입니다.");
+}
+}
+
+5.메모장으로 아래의 프로그램을 작성하시오.(변수 할용 하여..)
+-사각형의  넓이를 구하시오. 가로 10 , 세로 20
+     사각형의 넓이는 200 입니다.
+{
+public static void main(String[] args) {
+	int horizontal= 10;
+	int Vertical = 20;
+	int area = horizontal* Vertical;
+	System.out.println( "사각형의 넓이는" + area +" 입니다");
+	
+}
+}
+
+6. 아래의 용어를 설명하시오.
+변수 선언: 4byte의 공간을 num의 이름으로 공간을 만든다.
+변수: 변수는 숫자 문자와 같은 값들을 저장하는 공간(변하게 한다)
+메모리 할당: 메모리에 공간을 만드는 것
+
