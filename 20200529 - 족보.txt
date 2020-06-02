@@ -1,0 +1,51 @@
+1.다형성이란?
+
+다형성이란 동일한 조작방법으로 동작시키지만 동작방법은 다른 것을 의미한다.
+
+
+2. 아래의 메모리를 그리시오.
+class MobilePhone {
+    protected String number;
+    
+    public MobilePhone(String num) {
+        number = num;
+    }    
+    public void answer() {
+        System.out.println("Hi~ from " + number);
+    }
+}
+
+class SmartPhone extends MobilePhone { 
+    private String androidVer;
+    
+    public SmartPhone(String num, String ver) {
+        super(num);
+        androidVer = ver;
+    }    
+    public void playApp() {
+        System.out.println("App is running in " + androidVer);
+    }
+}
+=======================================
+	MobilePhone phone = new SmartPhone("010-555-777", "Nougat");
+    	phone.answer();    	
+    	SmartPhone s = (SmartPhone)phone;    	
+    	s.playApp();
+
+2.is-a 관계와 has-a 관계에 대하여 설명하시오.
+
+is - a는 상속관계 
+has-a는 데이터 멤버관계
+
+3.메소드 오버로딩과 오버라이딩의 차이점은?
+오버로딩은 같은 이름의 메소드를 여러개 가지면서 매개변수의 유형과 개수가 다르도록 하는기술
+오버라이딩은 상위 클래스가 가지고있는 메소드를 하위 클래스가 재정의 해서 상요한다.
+
+4 책 323 page 14-1번
+
+5.instanceof 연산자에 대하여 설명하시오.
+레퍼런스가 가리키는 실제 객체가 어떤 클래스 타입인지 구분 
+boolean 타입으로 객체 레퍼런스가 가리키는 객체가 해당클래스 타입이면 true or false
+
+
+6.남는 시간은 어제 프로그래밍 모두 중요합니다.(시간내에 풀수 있도록 계속 연습 부탁드리겠습니다.)

@@ -1,0 +1,428 @@
+﻿반지름이 7인 원의 넓이 구하기 
+double radius = 7;
+final double PI = 3.14;
+double area = radius*radius*PI;
+sout ("원의 넓이는 "+area)
+
+밑변 4.9 높이 2 삼각형넓이 구하기
+
+	
+		double width = 4.9;
+		double height = 2;
+		
+		double area = width*height/2;
+		System.out.println("이 삼각형의 넓이는 "+area);
+		
+-100 이 짝수 이면 짝수 입니다 라고 출력 하는 프로그램을 작성하시오.
+ - 66 이  2의 배수 이고 3의 배수가 맞는지 출력하는 프로그램을 작성하시오.
+ - 90 과 91 중 큰수를 출력하는 프로그램을 작성하시오.(어려우면 하지 말것)
+	int a = 100, a1 = 66,a2 = 90,a3 = 91;
+	String s = "네", s1= "아니오" ,s2 ="짝수" , s3= "홀수 ";
+	boolean q = (a%2==0||a%2==1),q1 = (a1%2==0||a1%3==0);
+	System.out.println("100은 짝수 입니까?"+(q?s:s1));
+	System.out.println("66은 2의 배수? 3의 배수? 아니면 둘다?"+ (q1?s2:s3));
+	System.out.println("90,91 중에 더 큰수는?"+(a2>a3?a2:a3));
+
+80 과 90 중 큰수를 출력하는 프로그램을 작성하시오.
+	int a = 80, a1 = 90;
+	System.out.println("80,90 중에 더 큰수는? "+(a>a1?a:a1));
+
+. 국어 70, 수학 60 ,영어 70 의 총점과 평균을 출력하고, ********
+평균에 대한 수우미양가를 출력하는 프로그램을 작성하시오.
+
+double kor = 70 , eng = 70, mat = 60;
+		double sum = kor+eng+mat;
+		double avg = kor+eng+mat/3;
+		System.out.println("3과목의 총점은 ?"+sum);
+		System.out.println("3과목의 평균은 ?"+avg);
+		if(avg>=80) {
+			System.out.println("a");
+		}else if(avg >=60) {
+			System.out.println("b");
+		}else if(avg >=40) {
+			System.out.println("c");
+		}else {
+			System.out.println("d");
+		}
+		
+변수 3개를 선언후 값을 할당 하여, 3개중 MAX 값을 출력하는 프로그램을 작성하시오.
+	//변수 3개를 선언한후 값을 할당하여 3개중 MAX값을 출력하는 프로그램을 만드시오
+		int a = 7;
+		int a1 = 2;
+		int a2 = 5;
+		int max = (a>a1 &&a>a2)?a:(a1>a2)?a1:a2;
+		//max = 7가 2보다 크거나 7가 2보다 크면?7 2이5보다 크면? 2 작으면 5
+		if (a>a1&a>a2) {
+			max = a;
+		}else if(a1>a&a1>a2) {
+			max = a1;
+		}else {
+			max = a2;
+		}
+		System.out.println("최대값은 "+max);
+		
+
+do while 문과 while 문을 이용 하여, 9단을 찍으시오.
+
+	int a = 1;
+	while(a<10) {
+		System.out.println("9"+"*"+a+"="+9*a);
+		a++;
+	}
+	int a1 = 1;
+	do {
+		System.out.println("8"+"*"+a1+"="+8*a1);
+		a1++;
+	}while(a1<10);
+		
+		
+
+8.구구단 6단 중 짝수만(6*2, 6*4, 6*6,6*8) 찍으시오.
+
+	for(int i= 6;i<=6;i++) {
+		for(int j = 0;j<9;j+=2) {
+			System.out.println(i+"*"+j+"="+i*j);
+		}
+	}
+
+구구단 8단중에 홀수만 
+	for(int i1 = 8;i1<=8;i1++) {
+		for(int j1 = 0;j1<=9;j1+=3) {
+			System.out.println(i1+"*"+j1+"="+i1*j1);
+		}
+	}
+
+2.구구단을 짜는 프로그램을 작성하시오.(외울것)
+
+	for(int i2 = 2;i2<10;i2++) {
+		for(int j2 = 1;j2<10;j2++) {
+			System.out.print(i2+"*"+j2+"="+i2*j2+"\t");
+			}
+		System.out.println("");
+	}
+			
+
+
+3.아래와 같이 프로그램을 짜시오.
+*****
+ ****
+  ***
+   **
+    * 
+
+
+
+4. 1 부터 100 까지 더하는 프로그램을 작성하시오(외울것)
+
+ 홀수를 더해 1000이 넘어서는지 넘어선값은 얼마나 되는지 계산하는 출력프로그램을 만들기
+
+ 국어, 영어 수학 점수변수 선언후 평균과 합계를 출력하고 수우미양가를 출력하는 프로그램을 작성하시오(외우세요).
+average 함수와 grade 함수는 작성해서 호출할것.
+
+ 정수 하나를 입력 받아 아래와 같은 별찍기를 함수를 만드시오.
+3을 받으면(3층탑)
+*
+**
+***
+4을 입력 받으면(4층탑)
+*
+**
+***
+****
+
+.정수 하나를 입력 받아 입력받은 수가 8이면 1부터8단까지 구구단 출력하는 함수를 작성하시오.
+
+.정수 하나를 입력받아 1 부터 입력받은 수까지 합을 구하는 함수를 작성하시오.
+
+10.두수를 입력 받아 아래와 같은 함수를 만드시오.
+ 5 와 10을 입력 받을시
+ 5+6+7+8+9+10 의 합을 리턴
+5< + >10
+
+만약 첫번째 입력값이 두번째 입력값보다 같거나 작을경우
+프로그램 에러입니다 출력 하도록 할것.
+
+11. 두수를 입력 받은후 두수의 최소 공배수를 리턴하는 함수를 만드시오. 두수가 같거나 하나라도 음수이면 프로그램 실행 안됨이라고 출력 할것.
+
+12.정수하나를 입력받아 해당 입력받은 수의  구구단 을 출력하시오. 8이면 8단 .. 7이면 7단 .. 
+
+ 클래스 이름 : Triangle 
+     -인스턴스 변수 : width,height
+     - 삼각 넓이를 구하는 함수 : getArea
+     - 변수 셋팅 함수고,  Test 클래스에서
+ 테스트 하시오.
+
+
+. 클래스 이름 : Student 
+     -인스턴스 변수 : kor, eng, math
+     -setter 함수 작성 
+     - grade 함수 average 함수 작성
+     Test 클래스에서 평균과 수우미양가를 출력하는 프로그램을 작성하시오.
+
+.노래 한 곡을 나타내는 Song 클래스를 작성하라. Song은 다음 필드로 구성된다.
+
+- 노래의 제목을 나타내는 title
+- 가수를 나타내는 artist
+- 노래가 발표된 연도를 나타내는 year
+- 국적을 나타내는 country
+또한 Song 클래스에 다음 생성자와 메소드를 작성하라.
+
+- 생성자 2개 : 기본 생성자와 매개변수로 모든 필드를 초기화하는 생성자
+- 노래 정보를 출력하는 show() 메소드
+- main() 메소드에서는 1878년, 스웨덴 국적의 ABBA가 부른 "Dancing Queen"을 
+Song 객체로 생성하고 show()를 이용하여 노래의 정보를 다음과 같이 출력하라.
+=================
+출력 : 1978년 스웨덴국적의  ABBA가 부른 Dancing Queen
+
+다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
+
+- int 타입의 x, y, width, height 필드 : 사각형을 구성하는 점과 크기 정보
+- x, y, width, height 값을 매개변수로 받아 필드를 초기화하는 생성자
+- int square() : 사각형 넓이 리턴
+- void show() : 사각형의 좌표와 넓이를 화면에 출력
+- boolean contains(Rectangle r) : 매개변수로 받은 r이 현 사각형 안에 있으면 true 리턴 (겹치면 안됨. 완전히 안에 있어야 true)
+- main() 메소드의 코드와 실행 결과는 다음과 같다.
+=============================
+출력:
+(2,2)에서의 크기가 8*7인 사각형의 면적은 36 입니다. 
+t는r을 포함합니다.
+
+. 아래를 코딩 하시오.
+GuguDan gu = new GuGuDan(7);
+gu.show();  // 7단 출력
+gu.setDan(8);
+gu.show()  // 8단 출력.
+
+6.아래의 프로그래밍을 하시오.
+StarPrint sp = new StarPrint(5);
+sp.floorShow(); //5층 피라밋
+sp.setFloor(3); 
+sp.floorShow(); //3층 피라밋
+  *
+ ***
+*****
+
+
+10. 아래의 프로그램을 작성 하시오.
+
+		Triangle t1 = new Triangle(10, 20);
+		Triangle t2 = new Triangle(10, 20);
+		Triangle t3 = new Triangle(10, 10);
+		
+		t1.equalTriangle(t2);
+		t1.equalTriangle(t3);
+
+===출력====
+같은 삼각형 입니다.
+다른 삼각형 입니다.
+
+6.다음을 프로그래밍 하시오.
+Circle c1 = new Circle (6);
+Circle c2 = new Circle (7);
+Circle c3 = new Circle (8);
+
+Circle max = Circle.maxCircle(c1,c2,c3);
+
+Sysout.out.println(max.radius)
+
+======================
+출력 : 8
+
+8.다음을 프로그래밍 하시오
+Sysout.out.println(MyCalculator.add(1, 2));	
+Sysout.out.println(MyCalculator.min(1, 2));
+
+int num1;
+	int num2;
+	
+	MyCalculator(int num1,int num2){
+		this.num1=num1;
+		this.num2=num2;
+		
+	}
+	
+	static int add(int num1,int num2) {
+		return num1+num2;
+		
+	}
+	static int min(int num1,int num2) {
+		return num1-num2;
+		
+	}
+	
+}
+
+
+
+
+
+출력: 
+3
+-1
+
+//1. 마지막 3글자 자르기
+String str = "ABCDEFG"; 
+String result = 소스코딩      
+System.out.println(result)
+ //결과값EFG
+
+11.아래를 String 함수등을 사용하여 프로그래밍 하시오.
+//2. 특정문자 이후의 문자열 제거
+String str = "ABCD/DEFGH";
+String result = 소스코딩
+System.out.println(result); 
+//결과값 DEFGH
+
+12. 아래를 프로그래밍 하시오.
+Rectangle r1 = new Rectangle(5,6);
+Rectangle r2 = new Rectangle(7,9);
+
+Rectangle r3 = Rectangle.compareRect(r1,r2);
+
+System.out.println(r3.getHeight() + " : " + r3.getWidth()  + "입니다.");
+=============================
+출력 : 9 : 7 입니다.
+
+. 아래의 Grade 클래스를 완성하시오.
+   - 3과목은 스캐너 객체로 받음
+Grade me = new Grade(math, science, english);
+System.out.println("평균은 "+me.average()); // average()는 평균을 계산하여 리턴
+
+2.아래와 같이 원의 넓이를 구하는 프로그램을 작성하시오.
+
+원의 반지름을 입력하세요 : 10
+원의 넓이는 314 입니다.
+계속 하시겠습니까 yes면 y No이면 n: y
+원의 반지름을 입력하세요 : 10
+원의 넓이는 314 입니다.
+계속 하시겠습니까 yes면 y No이면 n: n
+프로그램을 종료 합니다.
+
+3.아래와 같은 프로그램을 작성하시오.
+
+아래중 고르세요(1.삼각형 2.사각형 3.원) >> 2
+가로 입력하세요>>4
+세로 입력하세요>>5
+넓이는 20입니다.
+계속 하시겠습니까 yes면 y No이면 n: y
+아래중 고르세요(1.삼각형 2.사각형 3.원) >> 1
+가로 입력하세요>>4
+세로 입력하세요>>5
+넓이는 10입니다.
+계속 하시겠습니까 yes면 y No이면 n: n
+프로그램을 종료 합니다.
+
+4.6개의 정수를 담는 배열을 선언후, 로또 번호 6개 생성하여 출력하는
+프로그램을 짜시오.
+-번호생성은 Random 함수 또는 객체를 참고 할것.
+-숫자가 중복되지 않을것.
+
+1. 아래의 2차원 배열의  메모리 그림을 그리시오.
+int[][] arr = {
+   {11, 22, 33},
+   {44, 55, 66}, 
+   {77, 88, 99}
+};
+
+
+2. 아래를 프로그래밍 하시오.
+ - 10 개의 배열을 선언후 1부터 100까지의 수중에서
+랜덤하게 생성하여 10개의 배열에 넣는다.
+- 아래의 max 변수에 해당 배열의 값중에 최대값을 반환하는 함수를 만드시오. 
+
+int[] arr = new int[10];
+
+int max = getMaxValue(arr) 
+
+
+3. 아래를 프로그래밍 하시오.
+ - 10 개의 배열을 선언후 1부터 100까지의 수중에서
+랜덤하게 생성하여 10개의 배열에 넣는다.
+- sortArr 에 내림차순으로 sorting 된 배열을 리턴한다.
+
+int[] arr = new int[10];
+....
+int[] sortArr = getSortDESC(arr) 
+.....
+
+
+6. 아래를 프로그래밍 하시오.
+ - Rectangle 배열 4개를 만든후 스캐너 객체로 가로와 세로를 입력하여 4개의 객체를 배열에 할당한다 
+- 해당 배열중 넓이가 최대값을 찾아서 리턴
+
+Rectangle[] rec = new Rectangle[3];
+........
+Rectangle maxRec = getMaxRec(rec) 
+s.o.p("최대사각형 넓이는" +maxRec.getArea())
+
+7. 아래를 프로그래밍 하시오.
+ - Rectangle 배열 4개를 만든후 스캐너 객체로 가로와 세로를 입력하여 4개의 객체를 배열에 할당한다 
+-  getSortingRec 사각형 배열을 내림차순 정렬한다.
+-정렬이 제대로 되었는지 배열에 저장된 객체의 getArea()함수를 순서대로 호출한다.
+
+Rectangle[] rec = new Rectangle[3];
+........
+Rectangle[] recSorting = getSortingRec(rec) 
+......
+
+8. 다음 TV 클래스가 있다.
+
+class TV {
+	private int size;
+	public TV(int size) { this.size = size; }
+	protected int getSize() { return size; }
+}
+
+다음 main() 메소드와 실행 결과를 참고하여 TV를 상속받은 ColorTV 클래스를 작성하라.
+
+public static void main(String args[]) {
+		colorTV myTV = new ColorTV(32, 1024);
+		myTV.printProperty();
+	}
+
+=====
+출력:32인치 1024컬러
+
+
+9. 문제
+
+다음 main() 메소드와 실행 결과를 참고하여 ColorTV를 상속받는 IPTV 클래스를 작성하라.
+public static void main(String args[]) {
+		IPTV iptv = new IPTV("192.1.1.2", 32, 2048); // "192.1.1.2" 주소에 32인치, 2048 컬러
+		iptv.printProperty();
+	}
+===출력
+나의 IPTV는 192.1.1.2 주소의 32 인치 2048컬러
+
+
+0. 다음은 2차원 상의 한 점을 표현하는 Point 클래스이다.
+
+class Point {
+	private int x, y;
+	public Point(int x, int y) { this.x = x; this.y = y; }
+	public int getX() { return x; }
+	public int getY() { return y; }
+	protected void move(int x, int y) { this.x = x; this.y = y; }
+}
+
+Point를 상속받아 색을 가진 점을 나타내는 ColorPoint 클래스를 작성하라. 다음 main() 메소드를 포함하고 실행 결과와 같이 출력되게 하라.
+======출력======
+RED 색의 (10,20)의 점 입니다.
+
+
+1.아래를 다형성의 활용하여 프로그래밍 하시오.
+
+-원의 넓이
+-사각형 넓이
+-삼각형 넓이
+==========
+3개 넓이의 총합을 구하는 프로그램을 짜시오
+
+2. 아래의 출력 결과가 아래와 같이 나오도록 프로그래밍 하시오.
+Circle circle = new Circle(10);
+Object obj = new Circle(10);
+System.out.println(obj);
+=================
+출력: 넓이는 100 입니다.
+
+

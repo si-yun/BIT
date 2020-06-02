@@ -1,0 +1,27 @@
+
+public class TV {
+	private static int size;
+	public TV(int size) {
+		this.size = size;
+}
+	protected static int getSize() {
+		return size;
+	}
+}
+
+class ColorTV extends TV {
+	
+	static int color;
+	
+	ColorTV (int size, int color) {
+		super(size);
+		this.color = color;
+	}
+	
+	public static void printProperty() {
+		System.out.println(getSize() + " " + color);
+	}
+	
+	
+
+}
