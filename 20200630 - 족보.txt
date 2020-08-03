@@ -1,0 +1,29 @@
+delete, trucate
+3.무결성이란?
+데이터 베이스에 저장된 값과 그것이 표현하는 현실세계의 실제값이 일치하는 정확성을 의미함
+
+4.무결성의 제약조건 5가지는?
+not null-null을 허용하지 않음
+unique - 중복된 값을 허용하지 않고 항상 유일한 값을 갖도록함 
+foreign key - 참조 되는 테이블의 컬럼의 값이 존재하면 허용
+primary key - null을 허용하지않고 중복된 값도 허용하지않음 notnull조건과 unique 조건을 결합한 형태 
+chech - 저장가능한 데이터값이 범위나 조건을 지정하여 설정한 값만 허용 
+
+
+5.emp list 와 update 를 마무리 지으세요.
+
+5.emp list 와 insert 를 마무리 지으세요.
+
+=============================
+
+1.10번 및 30번 부서에 속하는 모든 사원의 이름과 부서 번호를 출력하되,
+ 이름을 알파벳순으로 정렬하여 출력하라.
+2. 10번 및 30번 부서에 속하는 모든 사원 중 급여가 1500을 넘는 사원의
+ 이름 및 급여를 출력하라.
+(단 컬럼명을 각각 employee 및 Monthly Salary로 지정하시오)
+3. Dallas에서 근무하는 사원과 직업이 일치하는 사원의 이름,부서이름, 및 급여를 출력하시오
+3. Dallas에서 근무하는 사원과 직업이 일치하는 사원의 이름,부서이름, 및 급여를 출력하시오
+
+select ename,dname,sal from emp e,dept d where e.deptno = d.deptno
+and job in (SELECT job FROM emp e,dept d where e.deptno = d.deptno
+and d.loc = 'dallas');

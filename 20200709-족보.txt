@@ -1,0 +1,40 @@
+1.스프링 mvc 란 무엇인가?
+spring MVC는 MVC패턴 기반의 웹 프레임워크임 
+model view controller의 약자
+model	애플리케이션정보 데ㅇㅣ터 처리관리 
+view	사용자 인터페이스 (화면)
+controller_model과  view간의 상호동작 조정을 의미 
+
+2.아래를 설명하시오.
+-pom.xml			라이브러리 관리 임
+-web.xml			서버 구동을 위한 톰캣,was를 위한 설정임
+-servlet-context.xml	해당클래스웹 요청을 위해 요청을 처리하는 컨트롤러를 사용하는 용도,.
+
+3.스프링의 아래의 객체에 대하여 설명하고, 해당 스프링의 실행 순서는?
+클라이언트 
+-dispacherservlet	1,4,6
+-HandlerMapping	2
+-HandlerAdapter	3
+-Controller 	5
+-ViewResolver	7 
+
+
+4.jsp로 spring을 짜 보시오.
+ 
+5. 아래의 javascript 함수를 만드시오.
+function createCar(name,color,speed){
+			var carobj= {
+			name : name,
+			color : color,
+			speed : speed,
+			run : function(){
+				return this.speed +"km/h";
+			}
+		};
+			return carobj;
+		};
+
+
+var sorento = createCar("SORENTO", "GREY", 220);
+			console.log("sorento.name : " + sorento.name);
+			console.log("sorento.run : " + sorento.run());

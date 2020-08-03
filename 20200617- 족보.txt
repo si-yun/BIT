@@ -1,0 +1,105 @@
+  
+1.Servlet 라이프사이클(생명주기) 에 대하여 설명하시오.
+
+클라이언트가 Servlet에 요청을 하면 Servlet은 바로 호출이 되지 않습니다.
+Servlet은 객체를 생성하고 초기화 작업을 거친구 요청으 처리하는 생명주기를 갖고 있습니다.
+*JSP페이지도 결국은 Servlet이기 때문에 같은 생명주기를 갖음.
+1)요청이 오면 Servlet클래스가 로딩되어 요청에대한 Servlet객체가 생성됨
+2)서버는 Init()메소드를 호출해서 Servlet을 초기화 함
+3)Servlet()메소드를 호출해서 Servlet이 브라우저의 요청을 처리하도록 함
+4)Servlet()메소드는 특정HTTP요청(get,post)등을 처리하는 메서드 (doGet(),doPost())등을 호출함
+5)서버는 destroy() 메소드를 호출하여 Servlet을 제거 함.
+
+톰캣에서 servlet을 관리하고있는 방법
+Servlet 객체를 생성하고 초기화하는 작업은 비용이 많은 작업이므로, 
+다음에 또 요청이 올 때를 대비하여 이미 생성된 Servlet 객체는 메모리에 남겨둡니다.
+또 톰캣이 종료되기 전이나 reload 전에 모든 Servlet을 제거하게 됩니다.
+이렇게 톰캣은 자원을 아끼면서 Servlet을 사용하고 있습니다.
+
+2.servlet 컨테이너에 대하여 설명하시오.
+servlet을 관리하고 동작 시킬 수 있는 환경을 제공하는 서버 프로그램 
+
+3.<context-param>과 <init-param> 의 차이는?
+context-param 컨텍스트초기화 파라미터
+Servlet 상에서 호출시 
+getSetvletContext().getintParameter("paraname");
+범위 :웹 애플리케이션에 존재하는 어떤 Servlet이나 JSP모두 
+
+init-param 서블릿초기화 파라미터 
+servlet상에서 호출시 
+getServletConfig().getintParameter("foo");
+범위 : <init-param>항목을 표현하고 있는 서블릿만.
+서블릿 코드 안에서 이 값을 속성에 저장하여 다른 컴포넌트에서도 이용 가능하게 만들 수 있다
+
+
+4.context path에 대하여 설명하시오.
+프로젝트명이 다른말로  컨텍스트명(context path)임
+안에 들어있는 폴더를 통해서 관리함.
+
+5.position 속성 4가지에 대하여 설명하시오.
+fixed = 고정 
+absolute = absolute는 position: static 속성을 가지고 있지 않은 부모를 기준으로 움직임 
+부모 포지션에 태그가 없다면 가장 위의 태그 body를 기준으로 움직임.
+relative = top,right,bottom,left의 위치 조절이 가능함 
+static = 가장 기본(모든 태그들은 처음에 static상태) 차례대로 왼쪽에서 오른쪽 위에서 아래로 쌓임.
+ default  기본값 이라 설명해줌.
+
+6.예제 jsp_7_1_ex_formex를 꼬오록 외우시오.
+
+
+7.실전 HTML5 & CSS동영상강좌_12강_CSS 속성-III.pptx
+에 있는 화면을 구현하시오.
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+       div{
+       width: 1000px;
+       margin:0 auto;
+       overflow: hidden;
+       padding:10px;
+       box-sizing: border-box;		       
+       }
+       div p:nth-child(1) {
+		font-size: 2.0em;
+		text-align: center;
+		height: 100px;
+		line-height: 100px;
+		text-decoration: underline;
+		}
+		div p:nth-child(2) {
+		font-size: 1.2em;
+		text-align: left;
+		}
+		div p:nth-child(4){
+		font-size: 1.2em;
+		text-align: right;
+		}
+		div p:nth-child(6){
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.5em;
+		text-align: center;
+		}
+		div p:nth-child(6) a{
+		text-decoration: none;
+		}
+    </style>
+
+</head>
+<body>
+	<div>
+   		<p>HTML5,CSS3 Document</p>
+   		<p>To.all member</p>
+   		<p>html5,CSS3 study is very easy html5, CSS3 study is very easy</p>
+   		<p>from SBA</p>
+   		<hr/>
+   		<p><a href="http://sba.seoul.kr" target="_blank">서울산업진흥원</a></p>
+   	</div>
+</body>
+</html>

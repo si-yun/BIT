@@ -1,0 +1,54 @@
+  
+1. 다음을 프로그램 하시오.
+interface Printable { // MS가 정의하고 제공한 인터페이스
+   public void print(String doc);
+}
+class SPrintDriver implements Printable{
+	@Override
+	public void print(String doc){
+		System.out.println("나는야 삼성");
+		System.out.println(doc);
+	}
+}
+class LPrinterDriver implements Printable{
+	@Override
+	public void print(String doc){
+		System.out.println("나는야 엘지")
+		Ststem.out.ptintln(doc);
+	}
+}
+
+ SPrinterDriver 와 LPrinterDriver를 만드시오
+======================
+
+public static void main(String[] args) {
+   String myDoc = "This is a report about...";
+   
+   // 삼성 프린터로 출력
+   Printable prn = new SPrinterDriver();
+   prn.print(myDoc);
+   System.out.println();
+
+   // LG 프린터로 출력
+   prn = new LPrinterDriver();
+   prn.print(myDoc);
+}
+
+2. interface 문법중 default 에 대하여 설명하시오.
+
+이미 정의되어있는 프로젝트에는 수십개의 인터페이스가 있는데 인터페이스 상속을 하게되면 
+인터페이스의수는 두배로 늘어나게된다 이런 불편한 상황을 해결하기위해 디폴트 메소드를 사용하게 되는데 
+사용하게 되면 디폴트 문법의 추가로  기존의 클라스들을 수정하지않고  문제를 해결할수있다.
+
+3.abstract 클래스에 대하여 설명하시오.
+추상클래스 이다 추상클래스를 대상으로 인스턴스 생성도 불가능 하며 다른 클래스에서 메소드가 구현이 되어야한다 
+**다른 클래스들과 마찬가지로 인스턴스 변수와 인스턴스 메소드를 갖지만 이를 상속하는 하위 클래스에의해서
+구현이 되어야할 메소드가 하나 이상 있는경우 **
+
+4.추상클래스와 interface의 차이는 무엇인가요?
+인터페이스와 추상클래스의 차이점은 
+표준성 강제성
+개발 속도의 차이점이있다 
+
+
+5.조별학습-가즈아 ~~

@@ -1,0 +1,179 @@
+1.Model 객체에 대하여 설명하시오.
+모델은 hashmap형태를 갖고 있으므로 key값과 value값처럼 사용할수있다
+addAttibute는 map의 put과 같은 기능과 같아서 이를 통해 해당 모델에 원하는 속성과 그것에 
+대한 값을 주어 전달할 뷰에 데이터를 전달할수있다
+2.ModelAndView 객체의 사용법은?
+modelAndview객체는 model객체와 데이터를 넘길 페이지 값을 가진 return을 합친 것입니다.
+데이터와 넘길 페이지의 값을 모두 가지고있는 객체 입.
+
+3.아래를 @을 설명하시오.
+-@RequestParam
+@ReuqestParam 어노테이션은 HttpServletRequest 객체와 같은 역할을 한다.
+HttpServletRequest에서는 getParameter() 메소드를 이용했지만,
+@RequestParam을 이용해서 받아오는 방법도 있다.
+
+4.req.getParameter 보다 @RequestParam 의 장점은?
+여러개의 값을 받아올때 그 갯수만큼 parameter를 선언해 줘야한다는것 
+폼에있는 모든 값을 불러오기위해서 여러개의 변수를 하나씩 다 선언해 주는것은 귀찮기 때문,
+
+5.command 객체란?
+ - 유의할점 2가지는?
+default 생성자와 
+getter,setter ()가 존재해야함
+
+6.HttpServletRequest 객체를 설명하시오.
+클라이언트의 요청정보를 확인 하기 위해서 Interface HttpServletRequest객체를 사용해야함 
+보통 Spring MVC구조에서는 컨트롤러나 인터셉터에서 parameter를 추가하려 사용하는 편임
+
+7.정보은닉이란?
+객체지양개념으로 캡슐화란 데이터 와 데이터를 처리하는 함수를 하나로 묶는것임 
+장점은 객체의 세부내용이 외부에 은폐되어 변경이 발생할때 오류발생이 적고 재사용이 용이함.
+
+8.아래를 프로그래밍 하시오.
+-프로토타입으로 함수를 만들것
+function Scoring(name,mat,eng,kor) {
+			this.name = name;
+			this.mat = mat;
+			this.eng = eng;
+			this.kor = kor;
+			
+		};
+		Scoring.prototype.getTot = function(){
+			return this.mat+this.eng+this.kor;
+		};
+		Scoring.prototype.getAvg = function(){
+			return (this.getTot()/3);
+		};
+		
+
+			var player1 = new Scoring("홍길동", 99, 90, 92);
+			console.log(player1.player + "의 총점 : " + player1.getTotal());
+			console.log(player1.player + "의 평균 : " + player1.getAverage());
+			
+			var player2 = new Scoring("홍길순", 80, 90, 85);
+			console.log(player2.player + "의 총점 : " + player2.getTotal());
+			console.log(player2.player + "의 평균 : " + player2.getAverage());
+
+9.아래를 스프링 mvc로 프로그래밍 하시오.
+이름 국어 영어 수학 을 입력 하는 페이지를 만든후, 이름과 총점 평균을 클라이언트에게 보내줄것
+1)조건 - command 객체 사용 할것
+2)롬복이 사용 할것.
+
+package edu.bit.ex;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/")
+	public String home(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "home";
+	}
+
+	@RequestMapping("/StudentID")
+	public String stua(Student student) {
+		return "StudentID";
+	}
+	
+	
+	@RequestMapping(value="/StudentResult", method = RequestMethod.POST)
+	public String stu(Student student) {
+		return "StudentResult";
+	}
+	
+}
+
+
+-----
+package edu.bit.ex;
+
+import lombok.Data;
+
+@Data
+public class Student {
+	private String name;
+	private int kor;
+	private int mat;
+	private int eng;
+	private int tot;
+	private int avg;
+	
+	
+	public int getTot() {
+		return this.mat+this.eng+this.kor;
+	}
+	public int getAvg() {
+		return getTot()/3;
+	}
+}
+
+	
+----
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR"> 
+
+<title>Insert title here</title>
+</head>
+<body>
+ 		name:${student.name}<br/>
+ 		kor:${student.kor}<br/>
+ 		mat:${student.mat}<br/>
+ 		eng:${student.eng}<br/>
+ 		TOT:${student.getTot()}<br/>
+ 		AVG:${student.getAvg()}<br/>
+</body>
+</html>
+
+-----
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="StudentResult" method = "post">
+		Name:<input type="text" name="name"><br/>
+		kor:<input type="text" name="kor"><br/>
+		mat:<input type="text" name="mat"><br/>
+		eng:<input type="text" name="eng"><br/>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소">
+		</form>
+</body>
+</html>

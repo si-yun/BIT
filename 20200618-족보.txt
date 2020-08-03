@@ -1,0 +1,179 @@
+1.아래의 용어에 대하여 설명하시오.
+
+-지시자(Directives)
+<% @ %>사이에 오늘 코드 
+page지시자를 많이 사용함 
+contentType,pageEncoding을 사용하여 문서 타입과 인코딩을 설정함.
+contentType 인코딩은 JSP파일을 HTML문서로 변환할때 적용
+pageEncoding JSP파일에 적용되는 인코딩.
+
+-스크립틀릿(Scriptlet)
+<% %>태그 사이에 오는 코드
+가장 기본적인 자바에서 할수있는 것들을 여기서 거의 할수있음
+out.print() 함수로 출력도 가능
+
+-표현식(expression)
+<%=%>태그 사이에 오는 코드 
+내장 객체(Implicit Objects)라고 부름
+out.print()함수랑 같다고 생각하셈.
+;쓰면 안됨.
+
+-선언(Declarations)
+<% !%> 태그 사이에 오는 코드 
+서블릿 클래스의 선언부에 오는 내용이라고 보면됨 함수 선언을 여기서 함 
+
+2.미디어 쿼리에 대하여 설명하시오.
+출력장치의 여러 특징 가운데 일부를 참조하여 CSS코드를 분기처리 함으로써 
+하나의 HTML소스가 여러가지 뷰를 갖도록 구현할수있는 명세이다 
+일반적으로 뷰포트 해상도에 따라 CSS코드를 분기한다.
+
+3. table 태그를 이용하여 구구단을 구현 하시오.
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+		<%
+			for(int i=2;i<10;i++){
+		%>
+		    <th><%=i+"단" %></th>
+		<%
+			}
+		%>
+		</tr>
+		<%
+			for(int i=2;i<10;i++){
+		%>
+		<tr>
+			<%
+				for(int j=1;j<10;j++){
+			%>
+			<th><%=i+"*"+j+"="+i*j %></th>
+			<%
+				}
+			%>
+	   		</tr>
+	   		<%
+			}
+	   		%>
+   		
+   		
+</table>
+
+	
+
+</body>
+</html>
+
+4.input box 로 가로와 세로를 서버로 전달하여, 해당 사각형의 넓이를 구하는 웹프로그래밍을 하시오.
+package edu.bit.ex;
+
+public class Rectangle {
+
+	public Rectangle() {
+		System.out.println("생성자");
+	}
+		public int getArea(int width,int height) {
+			return width*height;
+			
+	}
+}
+---------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+<body>
+	
+	<form action="Rectangle2.jsp" method="post">
+		높이:<input type="text" name="height"><br/>
+		밑변:<input type="text" name="width"><br/>
+		<input type = "submit" value="전송">
+	</form>
+</body>
+</html>
+-------------------------------------------
+<%@page import="edu.bit.ex.Rectangle"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+		<body>
+			<%
+			Rectangle rec = new Rectangle();
+			
+			String width = request.getParameter("width");
+			String height = request.getParameter("height");
+			int area = rec.getArea(Integer.parseInt(width),Integer.parseInt(height));
+			
+			out.print("사각형의  넓이는 "+area);
+			%>
+		
+		</body>
+</html>
+
+5.4.input box 로 가로와 세로를 서버로 전달하여, 해당 삼각형의 넓이를 구하는 웹프로그래밍을 하시오.
+
+package edu.bit.ex;
+
+public class Triangle {
+
+	public Triangle() {
+		System.out.println("생성자");
+	}
+		public int getArea(int width,int height) {
+			return width*height/2;
+			
+	}
+}
+------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+<body>
+	
+	<form action="Triangle2.jsp" method="post">
+		높이:<input type="text" name="height"><br/>
+		밑변:<input type="text" name="width"><br/>
+		<input type = "submit" value="전송">
+	</form>
+</body>
+</html>
+------------------------------------------------------
+<%@page import="edu.bit.ex.Triangle"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+		<body>
+			<%
+			Triangle tri = new Triangle();
+			
+			String width = request.getParameter("width");
+			String height = request.getParameter("height");
+			int area = tri.getArea(Integer.parseInt(width),Integer.parseInt(height));
+			
+			out.print("삼각형의 넓이는 "+area);
+			%>
+		
+		</body>
+</html>

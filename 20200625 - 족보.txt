@@ -1,0 +1,54 @@
+1.내장객체의 영역 page, request, session, application 에 대하여 설명하시오.
+	       내장객체	설명
+page	       pageContext	하나의 jsp페이지 내에 속하는 영역으로 하나의 jsp페이지안에서만 공유할 값을 저장
+request	       request	한번의 요청에 대한정보가 저장되는 영역. 웹브라우저가 요청을 보낼때마다 새로운 request영역이 되고 
+			request객체를 이용하여 모든 jsp페이지에서 접근 가능합니다.
+session	       session	한명의 사용자와 관련된 정보가 저장되는 영역. 사용자가 이용하는 웹브라우저 하나당 영역이 존재하기 
+			때문에 주로 로그인 정보를 저장합니다
+application     zpplication	모든 사용자가 이용할수있는 정보를 저장하는 영역. 하나의 웹 어플리 케이션에 대한 요청 
+			세션등과 같은 모든 정보는 aplication영역에 속합니다. 주로 웹어플리케이션의 설정정보를 저장합니다.
+
+2.emp 의 모든 데이터를 나타내시오.단 Datasource를 활용할것.
+
+3.EL 에 대하여 설명하시오.
+(Expression Language )  표현식 또는 액션태그를 대신해서 값을 표현하는 언어 
+더 간편함  기존에 쓰는것보다 .
+
+4.JSTL 에 대하여 설명하시오.
+(JSP Standard Tag Library )= 여러 프로그램이 공통으로 사용하는 코드를 모아 놓은 코드의 집합을 말함 
+
+5.아래의 조인에 대하여 설명하시오.
+-equi join - 조인 대상이 되는 두 테이블에서 공통적으로 존재하는 컬럼의 값이 일치되는 행을 연결하여 결과를 생성하는 조인기법.
+-self join - 자기 자신과 조인하는 기법 
+	- 조인은 서로 다른 두개의 테이블을 연결하기도 하지만 하나의 테이블내에서 조인을 해야만 자료를 얻을수있는 경우에 쓴임
+-outer join - 조인 조건에 만족하지 않는 행도 나타내는 조인기법 
+	 - 2개이상의 테이블이 조인될때 어느 한쪽의 테이블에는 해당하는 데이터가 존재하는데 다른쪽 테이블에는 데이터가 
+	- 존제하지않는경우 그데이터가 출력이 되지않는 문제를 해결하기 위해서 사용되는 조인기법
+
+=========================
+6.EMP 테이블에서 부서 인원이 4명보다 많은 부서의 부서번호, 인원수, 급여의 합 출력
+
+SELECT DEPTNO,COUNT(*),SUM(SAL) FROM EMP GROUP BY DEPTNO HAVING COUNT(*)>4;
+
+
+7.각 사원별 커미션이 0 또는 NULL이고 부서위치가 'GO'로 끝나는 사원의 정보를 
+-- 사원번호, 사원이름, 커미션, 부섭너호, 부서명, 부서위치 출력
+-- 단, 보너스가 NULL이면 0으로 출력
+
+SELECT
+E.EMPNO,E.ENAME,DECODE(E.COMM,NULL,NULL,0) COMM,E.DEPTNO,D.DNAME,D.LOC 
+FROM EMP E, DEPT D 
+WHERE e.deptno = d.deptno 
+AND (e.comm = 0 OR e.comm IS NULL) 
+AND d.loc like '%GO';
+
+8.1981년 6월 1일~1981년 12월 31일 입사자 중 부서명이 SALES인 사원의 부서번호, 사원명,
+-- 직업, 입사일을 출력 (단, 입사일 오름차순 정렬)
+
+SELECT e.deptno,d.dname,e.ename,e.job,e.hiredate
+FROM emp e, dept d
+WHERE e.deptno = d.deptno
+and e.hiredate>=to_date('1981-6-1')
+and e.hiredate<=to_date('1981-12-31')
+and d.dname = 'SALES'
+order by hiredate asc

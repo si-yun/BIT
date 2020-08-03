@@ -1,0 +1,27 @@
+  
+1.DB접속을 위한 3개의 객체와 해당 객체를 얻는 방법을 설명하시오.
+connection db연결 권한 (연결성을 갖는 인터페이스)
+statement crud sql 연결 (sqp문을 실행하는 인터페이스)
+resultSet 데이터담을 객체 (조회된 결과데이터를 갖는 인터페이스)
+
+connection 연결객체 생성  (url ,uesr,pw)
+실행객체 생성 statement	(sql문(dml,dql실행가능 )
+결과 객체 생성 		(resultSet조회된 결과를 저장 ,DQL작업_조회요청 조회된 결과값리턴 
+
+2.Statement 객체의 executeUpdate 와 executeQuery() 의 차이는?
+executeUpdate
+1. 수행결과로 ResultSet 객체의 값을 반환합니다.
+2. SELECT 구문을 수행할 때 사용되는 함수입니다.
+executeQuery
+1. 수행결과로 Int 타입의 값을 반환합니다.
+2. SELECT 구문을 제외한 다른 구문을 수행할 때 사용되는 함수입니다.
+
+3.JDBC란?
+Java DataBase Connectivity의 약자로서 자바 프로그램 내에서 
+DB와 관련된 작업을 처리할 수 있도록 도와주는 일을 한다.  
+Java에서 데이터베이스를 사용할 때에는 JDBC API를 이용하여 프로그래밍한다. 
+자바는 DBMS 종류에 상관없이 한나의 JDBC API를 사용하여 
+데이터베이스 작업을 처리할 수 잇기 때문에 알아두면 어떤 DBMS든 작업을 처리할 수 잇게 된다.
+
+4.emp 의 모든 정보를 가져오는 웹프로그래밍을 하시오.
+조건 1) 테이블로 가운데 정렬 시킬것.

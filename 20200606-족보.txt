@@ -1,0 +1,160 @@
+1.OS의 역할은?
+메모리 공간은 할당해주는 놈이 이놈 
+메모리 공간할당 관리를 os가 함!!!
+
+2.자바 메모리 영역에 대하여 설명하시오.
+-MA
+ㄴ.class에 대한 정보들을 (class를)올림,static붙은 것 변수들의 방을 잡는다 
+-Call stack
+ㄴ함수만 저장됨(지역변수 매개변수)
+-heap
+ㄴ객체만 저장됨 (인스턴스)도!
+
+
+
+3.Object 클래스가 가지는 각각의 함수는?
+boolean equals(Object obj)	두개의 객체가 같은지 비교하여 같으면 참 아니면 거짓반환
+String toString()		현재 객체의 문자열을 반환	
+protected Object clone()	객체를 복사
+protected void finalize()	가비지 컬렉션 직전에 객체의 리소스를 정리할때 호출
+Class getClass()		객체의 클래스 형을 반환함
+int hashCode()		객체의 코드 값을 반환함
+void notify()		wait된 스레드 실행을 재개할때 호출함
+void notifyAll()		wait된 모든 스레드실행을 재개할때 호출함
+void wait()		스레드를 일시적으로 중지할때 호출함
+void wait(long timeout)	주어진 시간만큼 스레드를 일시적으로 중지할때 호출함 
+void wait(long timeout,int nanos)	주어진 시간만큼 스레드를 일시적으로 중지활때 호출함.
+
+4. 아래와 같이 나오도록 프로그래밍 하시오
+==============================
+
+Person person1 = new Person("jeong-pro", 27);
+Person person2 = new Person("jeong-pro", 27);
+
+System.out.println(person1.equals(person2));//true 로 반환
+
+
+class Person {
+	private String name;
+	private int age;
+	
+	public Person(String name,int age) {
+		this.age = age;
+		this.name = name;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if((this.name == ((Person)obj).name) & (this.age == ((Person)obj).age)) {
+			return true;
+	} else {
+		return false;
+	}
+}
+
+}
+public class Personmain {
+
+	public static void main(String[] args) {
+		Person person1 = new Person("jeong-pro", 27);
+		Person person2 = new Person("jeong-pro", 289);
+
+		System.out.println(person1.equals(person2));
+	}
+
+}
+
+
+
+5.shallow copy 와 deep copy 차이는 무엇인가?
+shallow copy
+객체를 복사알때 해당 객체만 복사하여 새 객체를 생성
+복사된 객체의 인스턴스 변수는 원복 객체의 인스턴스 변수와 같은 메모리 주소를 참조.
+메모리 주소의 값이 변경되면 원본 객체및 복사 객체의 인스턴스 변수값은 같이 변경됨.
+
+ deep copy
+객체를 복사할때 해당 객체와 인스턴스 변수 까지 복사하는 방식
+전부를 복사하여 새 주소에 담기 때문에 참조를 공유하지 않는다.
+
+
+6.439 19-2 번의 문제를 푸시오.
+
+class Business implements Cloneable{
+	private String company;
+	private String work;
+	
+	public Business(String company,String work) {
+		this.company = company;
+		this.work = work;
+	}
+	public void showBusinessINfo() {
+		System.out.println("회사 :"+company);
+		System.out.println("업무 :"+work);
+	}
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		Business BB = (Business)super.clone();
+		BB.company = new String(company);
+		BB.work = new String(work);
+		return super.clone();
+		
+}
+}
+class PersonalInfo implements Cloneable{
+	private String name, company, work;
+	private int age;
+	private Business bz;
+	
+	public PersonalInfo(String name, int age, String company, String work) {
+		this.name = name;
+		this.age = age;
+		this.bz =new Business(company,work);
+		this.company = company;
+		this.work = work;
+	}
+	
+	public void showPersonalInfo() {
+		System.out.println("이름 :"+name);
+		System.out.println("나이 :"+age);
+		bz.showBusinessINfo();
+	}
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		PersonalInfo pf = (PersonalInfo)super.clone();
+		this.bz = new Business(company, work);
+		this.name = new String(name);
+		this.company = new String(company);
+		this.work = new String(work);
+		
+		return pf;
+	}
+}
+public class PersonalInfomain {
+
+	public static void main(String[] args) {
+		
+		PersonalInfo bus = new PersonalInfo("순순",11, "여기","잡일");
+		PersonalInfo pf;
+		
+		try {
+		pf = (PersonalInfo)bus.clone();
+		bus.showPersonalInfo();
+		pf.showPersonalInfo();
+		
+		bus = new PersonalInfo("순순2",11, "여기2","잡일2");
+		bus.showPersonalInfo();
+		pf.showPersonalInfo();	
+		}
+		catch(CloneNotSupportedException e){
+			e.printStackTrace();
+		}
+		
+	}
+
+}
+
+
+7.431page 와 깊은복사의 메모리를 그리시오.
+
+
+

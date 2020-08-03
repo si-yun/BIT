@@ -1,0 +1,45 @@
+1. 게시판 작성시 아래의 용어 들에 대하여 간략히 정리하시오.
+ -Controller, Command , DAO
+controller 클라이언트 요청에 따른 전체적인 작업을 지휘하는 역할 
+DAO  데이터베이스에 직접 접근하여 작업하는 역할 
+command 실제로 작업하는 부분 content delete list modify
+
+ -@Controller, @Service, @Repository
+@controller 프레젠테이션 웹 어플리케이션에서 웹요청과 응답을 처리하는 클래스에 사용함
+@repository 퍼시스턴스레이어 영속성을 가지는 속성 (파일,데이터베이스)
+@service 서비스 레이어 비지니스 로직을 가진 클래스에 사용함
+
+2.@Component의  역할 과 세팅은 어디서 하며, 어떠한 의미인지 설명하시오.
+스프링에게 이클래스 파일은 빈이라고 역할 역활 
+<bean>태그와 동일한 의미
+
+3.Command 객체에 대하여 설명하시오.
+DTO와 같고 getter setter 함수가 필수적으로 있어야함
+컨트롤러 ->view
+view ->컨트롤러 
+컨트롤러->mapper.xml
+
+4.아래의 방식으로 게시판을 완성하시오.(댓글 포함)
+ @Controller, @Service, @Repository
+
+@Controller
+public class BoardController {
+private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+
+@Service("boardService")
+public class BoardServiceImp implements BoardService {
+	
+@Repository("boardDAO")
+public class BoardDAO {
+private DataSource dataSource;
+
+5. input 박스에서 type=button 과 type=submit
+일때의 차이를 자바 스크립트 예제로 설명하시오.
+
+button - 자바스크립트를 이용한 기능구현에 많이 사용함. 버튼태그사이에 다른태그들을 삽입해서 꾸밈을 할수있다.
+submit - 폼을 전송하는 기능을 담당함.
+
+6.javascript 와 jquery 의 차이는?
+javascript 코드 재사용률이 높음,불필요한 코드의 반복사용을 줄여줘 간결한 코딩이 가능함 
+jquery  javascript를 이용한 라이브러리중 하나로 javascript를 간결하고 쉽게 사용할수 있도록 도와주는 라이브러리언어임.
+(선택자가 CSS와 거의 동일해 쓰기 편하고 배우기 쉽다는 장점이있음)

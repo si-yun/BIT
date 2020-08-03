@@ -1,0 +1,29 @@
+1.정적 리소스의 종류는?
+정적리소스
+maven
+gradle
+src/main/webapp
+2.스프링에서의 정적 리소스 처리 방식은?
+ResourceHttpRequestHandler 클래스
+정적리소스를 저장해둔 임의의 디렉터리에 대해 파일접근이나 HTTP 캐시를 손쉽게 처리
+요청된 경로와 물리적인 저장 경로를 매핑하는 역할
+리소스의 저장 경로에 클래스패스의 디렉터리나 문서 루트 디렉터리 혹은 임의의 디렉터리 지정가능
+3.게시판 버전 2 방식에서 delete 와 contentview를 구현하시오.
+
+4.아래를 설명하시오.
+-@AutoWired @Inject @Resource
+@Resource은 name 으로 DI 를 가능케한다.
+@Autowired은 type으로 DI 를 가능케한다
+@Inject은 name으로 DI를 가능케한다. 
+
+-@Repository
+@Repository주석 (또한 데이터 액세스 개체 또는 DAO로 알려진) 저장소의 역할이나 고정 관념을 충족하는 모든 클래스에 대한 마커
+
+-@Service 
+@Service Bean은 저장소 계층에서 비즈니스 로직 및 호출 메소드를 보유
+
+5.이벤트란 무엇이며, 이벤트 등록 방법 4가지에 대한 예를 드시오.
+onchange 요소가 변경 될 때 실행 
+onsubmit 양식이 제출될 때 실행 
+onreset 폼이 재설정 될떄 실행 
+onselect 값이 선택 되었을때 실행 

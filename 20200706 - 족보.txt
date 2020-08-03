@@ -1,0 +1,81 @@
+1.빌드 툴이란 무엇이며, 종류는?
+소스코드를 컴파일 테스트 정적분석 등을 실시하여 실행가능한 애플리 케이션으로 자동 생성하는 프로그램
+계속해서 늘어나는 라이브러리 자동추가 및 관리 
+프로젝트를 진행하며 시간이 지남에 따라 라이브러리의 버전을 자동으로 동기화 
+
+2.메이븐에 대하여 설명하시오.
+특징 
+프로젝트에 필요한 모든 종속성을 리스트의 형태로 maven에게 알려서 종속성을 관리한다
+XML,Repository 를 가져올수 있다 'jar,classPath를 선언만 하면 직접 다운로드 할 필요가 없이 Repository
+에서 자동으로 필요한 라이브러리 파일을 불러와준다 
+단점
+라이브러리가 서로 종속할결구 XML이 복잡해진다
+계층적인 데이터를 표현하기에는 좋지만 플로우나 조건부에 상황을 표현하기 어렵다 
+편리하나 맞춤화된 로직실행이 어렵다 
+
+3.pom.xml 에 대하여 설명하시오.
+ (메이븐 기반 프로젝트에서 사용하는 설정 파일) 
+4.bean 의 생명주기에 대하여 설명하고 또한 아래의 @에 대하여 설명하시오.
+@PostConstruct, @PreDestroy
+- 객체의 초기화 부분
+- 객체가 생성된 후 별도의 초기화 작업을 위해 실행하는 메소드를 선언한다.
+- @PostConstruct 어노테이션을 설정해놓은 init 메소드는 WAS가 띄워질 때 실행된다
+ @PreDestroy
+- 마지막 소멸 단계
+- 스프링 컨테이너에서 객체(빈)를 제거하기 전에 해야할 작업이 있다면 메소드위에 사용하는 어노테이션.
+- close() 하기 직전에 실행 -> ((AbstractApplicationContext) context).close()
+
+
+5. javascript 로 아래의 프로그램을 만들시오.
+
+이름, 국어, 영어, 수학 점수를 각각 prompt 로 입력받은후,
+수우미양가를 출력한후, 이름 prompt 에 종료가 입력 될때 까지 계속해서 수우미양가를 출력 하도록 하시오.
+
+function reset(){
+      location.reload();
+   }
+      
+         var name = prompt("이름을 입력해주세요.");
+         var kor = prompt("국어 점수를 입력해주세요.","");
+         var eng = prompt("영어 점수를 입력해주세요.","");
+         var math = prompt("수학 점수를 입력해주세요.","");
+      
+         
+         var kor1 = Number(kor);
+         var eng1 = Number(eng);
+         var math1 = Number(math);
+      
+      
+         if(confirm("성적을 반영하시겠습니까?")!=0){
+            alert("확인을 누르셨습니다.")
+            getGrade();
+         } else {
+            alert("취소를 누르셨습니다.")
+            reset();
+            
+         }
+      
+      function getGrade(){
+         var avg = (kor1+eng1+math1)/3;
+            
+         var grade = avg;
+         
+         if(grade > 90) {
+            grade = "수"
+         alert("등급은 : "+grade);
+         } else if (grade > 80) {
+            grade = "우"
+         } else if (grade > 80) {
+            grade = "미"
+         } else if (grade > 70) {
+            grade = "양"
+         } else {
+            grade = "가"
+         }
+         alert(name+" 님의 평균은 "+avg+", 등급은 "+grade+" 입니다.");
+      } 
+
+<script type="text/javascript">
+===============================
+실전 면접
+-동료내지는 상사와 안좋은 일이 있거나 트라블이 생기면 어떻게 하겠는냐?

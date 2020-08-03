@@ -1,0 +1,38 @@
+1.Validator 객체 사용법은?
+(유효성검사 회원가입을 하기 위해서 정해진양식의 값을 입력을 해야하는데 
+그 값이 잘못 될수있기 때문에 유효성 검사를 통해 잘못된 값을 사용자에게 알려줘야함 
+유효성 검사를 하기위해 validator를 적용함 )
+validator는 객체위 값을 검증할때 사용하는 인터페이스 임 
+
+2.JUNIT 이란?
+JAVA Testing framework 
+독립된 단위 테스트를 지원해주는 프레임워크 
+
+3. 아래의 인터페이스를 구현한 
+삼각형,사각형,원의 클래스를 구현하고,JUNIT를 이용하여 단위 테스트 하시오.
+-interface IShape{
+	-double getArea();
+}
+
+
+3.BOM 이란 무엇인가?
+Browser Object Model 약자임
+크롬,파이어폭스,익스플로러,사파이,오페라 등등 
+
+4.window 객체란 무엇인가?
+웹브라우저의 창을 나타내는 객체로 대부분의 웹브라우저에서 지원하고있음 
+
+
+
+5.아래를 프로그램 하시오.
+- 현재 탭에서 www.google.com 을 여시오.
+
+
+		alert("window object");
+		window.alert("window object");
+		
+		console.log("window object");
+		window.console.log("window object");
+		
+		window.open("Http://www.google.com","openwindow","width=1000,height=1000");
+		

@@ -1,0 +1,47 @@
+  
+1.비지니스 로직이란 무엇인가?
+ 업무처리에 필요한 데이터처리를 수행하는 응용프로그램의 일부 
+데이터 입력 수정 조회 등등을 수행하는 루틴 보이는것 이외에 일어나는 각종 처리들 
+__(엄무절차를 정보 시스템으로 구현하기 위한 자료구조와 알고리즘 
+데이터베이스와 ui간 정보교환을 제어하는 알고리즘.)
+
+2.ejb 와 spring 의 차이는?(간략하게 정리해 볼것)
+EJB 3.0은 아직 Spring에 비해서도 성숙도가 낮다
+ Spring 보단 검증이 덜 되었을 듯
+  Spring의 최대 강점은 유연성이다
+
+3.javascript 의 데이타 타입 종류는?
+숫자, 문자열, 불리언 함수 객체 unefined
+
+4.인터프리터 언어와 컴파일 언어의 차이점은?
+컴파일러는 한번에 모두 읽고 실행하지만 처음 컴파일 과정이 매우 오래 걸리고 메모리가 차지도 안음
+컴파일 이후 실행이 빠르고 더 이상 변환하지 않아 효율적 
+인터프리터는 처음에 빨리 실행이 되지만 많은 과정이 반복이 될경우 계속 해서 변환과정을 거처야함,
+
+==============================
+5)직업이 Clerk 또는 Analyst 이면서 급여가 1000,3000,5000 이 아닌
+ 모든 사원의 이름, 직업 및 급여를 출력하라.
+
+SELECT ename,job,sal FROM emp where job in('Clerk','Analyst') and sal not in(1000,3000,5000); 
+
+6)부서별로 부서이름, 부서위치, 사원 수 및 평균 급여를 출력하라.
+ 그리고 각각의 컬럼명을 부서명,위치,사원의 수,평균급여로 표시하라
+
+SELECT e.deptno as"부서명",d.dname as"부서이름" ,d.loc as"부서위치" , count(e.empno) as "사원수",avg(e.sal) as"평균급여"
+FROM emp e,dept d where d.deptno = e.deptno
+group by e.deptno,d.dname,d.loc;
+
+7)Smith와 동일한 부서에 속한 모든 사원의 이름 및 입사일을 출력하라.
+ 단, Smith는 제외하고 출력하시오
+
+SELECT ENAME, TO_CHAR(HIREDATE,'YYYY-MM-DD')
+FROM EMP
+WHERE DEPTNO IN(SELECT DEPTNO
+   FROM EMP
+   WHERE ENAME='SMITH')
+AND ENAME!='SMITH'
+ 
+
+8) KING에게 보고하는 모든 사원의 이름과 급여를 출력하라.
+SELECT ENAME,SAL FROM EMP WHERE MGR = (
+SELECT EMPNO FROM EMP WHERE ENAME = 'KING');

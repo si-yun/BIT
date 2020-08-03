@@ -1,0 +1,60 @@
+1.thread 란 무엇인가?
+
+하나의 프로그램안에 있는 또다른 프로그램이 쓰렏ㄷ
+
+2.Thread 를 생성 시키는 두가지 방법은?
+start run
+
+3.데몬 쓰레드란 무엇인가?
+일반쓰레드가 모두 종료되면 자동적으로 종료되게 만드는것.
+
+4.시멘틱 에 대하여 설명하시오.
+시멘틱은 의미의 의미론적인 이라는 뜻이다 
+즉 HTML에 도입된 시멘틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게됨 
+<div> 태그 안의 이름은 개발자 마음대로 정의할 수 있기 때문에
+헤더 정보 표현을 위해 <div class='head'> <div class='hd'> <div class='hdr'> 등
+ 여러 방법으로 표현이 가능하지만,
+HTML5에서는 시맨틱 태그를 제공하여 HTML태그의 의미를 명확하게 할 수 있다는
+ 것이다.
+이렇게 의미를 가지는 태그가 시맨틱 태그이고,
+HTML5은 새로운 시맨틱 태그들을 제공한다.
+
+5.#id 와 .class 의 차이점을 설명하시오.
+클래스 선택자 클래스를 족깁적으로 지정
+아이디선택자 고유성을 가지므로 한문서에 한번만 사용할수잇습니다.
+
+6.BankAccount 에서, 마이너스 값이 나오는 이유를 설명하시오.
+sleep과정에서 t1은 멈추고 t2가 실행이되고 t2또한 sleep으로 멈추게됨 
+t1이 다시 재실행 하면서 sleep이후 과정부터  balance=balance - money값이 들어서게 된다
+t2가 다시 재실행 하면서 sleep이후 과정에 balance값이 t1의-된 값과 새로 추가된 monry값을 비교 하기때문에
+-값이 나온다 
+
+즉 
+두개의1t과 t2가  한개의 r을 공유하기때문에 sleep에서 작업을 하던 t1이  t2에게 제어권이 
+넘어갔을때, t1이 작업하던 공유데이터를 t2가 임의로 변경이 되었을때  t1이 제어권을 받아서 
+나머지 작업을 마쳤을때 원래 의도했던것과는 다른 결과를 얻을수있다.
+
+자바의 
+힙영역은 JVM프로세스가 공유하는 영역  - 힙영역을 공유 함으로 생기는 문제 
+스택영역은 각 쓰레드마다 별개로 가지는 영역
+ 
+
+7. 메뉴 html 을 완성하시오.
+====
+
+  <div id="wrap">
+        <div id="content">
+            <h1>CONTENT</h1>
+            <ul>
+                <li class="menu1">menu1</li>
+                <li class="menu2">menu2</li>
+                <li class="menu3">menu3</li>
+                <li class="menu4">menu4</li>
+                <li class="menu5">menu5</li>
+            </ul>
+        </div>
+        <div id="side_banner">
+            <h1>BANNER</h1>
+            <a href="http://www.sba.seoul.kr" target="_blank"><img src="http://www.sba.seoul.kr/kr/images/footer/f_logo.png"></a>
+        </div>
+    </div>

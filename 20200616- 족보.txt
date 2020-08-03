@@ -1,0 +1,126 @@
+  
+1.jsp 가 WAS 에서 돌아가는 원리를 설명하시오.
+jsp서버는 클라이언트로부터 요청받은 jsp페이지를 순수한 html페이지로 변환해줌
+이 과정에서 jsp태그들은 추출되어 재해석되어서 결과적으로 순수한 html파일이 만들어짐.
+
+2.아래에 대하여 설명하시오.
+-doGet - 주소창을 타고 데이터가 넘어가기때문에 데이터를 사용자가 그대로 볼수있으므로 보안에 취약
+(로그인했을때 아이디와 패스워드가 주소창에 그대로 노출됨 
+주소입력란으로 데이터를 전송하기에 글자수에 제한이있어서 get방식으로 요청했을결루 정상적으로 넘어가지 않음.
+
+-doPost - 데이터가 html header를 타고 넘어가기때문에 주소창에는 데이터가 보여지지않음 그래서 보안에 좋음
+보통 form태그를 통해 서버에 전달을 하거나 요청을함 
+method속성을 기입하지않고 전송방식을 결정하지않으면 기본값인 get방식으로 요청함.
+
+-@WebServlet("/hworld") -  서블릿에서 @webServlet의 ?h/world부분은 애노테이션이라고 하고 
+톰캣은 어노테이션을 확인하여 해당 servlet으로 접근하기위해서는 url에 /heorld로 접근하면된다라는 맵핑을 준ㅁ
+-HttpServlet
+form을 이용해서 html과jsp페이지에 폼을준비해서 서블릿으로 보내는것과 같은 방법으로 서블릿을 이용할수있다,
+
+3.float 와 overflow에 대하여 설명하시오
+float 은 요소를 왼쪽 또는 오른쪽에 배치할때 유용한 속성입니다. float속성을 부여한요소의 다음요소는 float속성을 부여한
+요소가 차지하는 위치에만 제외하고 나머지 공간을 채우게 됩니다 사진을 왼쪽 또는 오른쪽에 배치하고 
+그 주위를 텍스트로 채울때 사용하거나 사이트레이아웃을 만들때 사용합니다.
+
+overflowm은 내용이 요소의 크기를 벗어났을때 어떻게 처리할지를 정하는 속성입니다 내용이 주어진 공간에 다 들어가지않을때 
+보여주게 할수도 있고 안보이게 할수도 있고 스크롤바를 만들게 할수도있습니다.
+
+4.아래의 속성을 설명하시오.
+-block	 -  div처럼 블록 지정으로 자동 줄바꿈과 크기를 지정할수있도록 합니다.
+-inline	- span처럼 줄바꿈이 되지않고 크기를 지정할수없습니다.
+-inline-block - 혼합된 형태로 크키는 지정할수 있으되 줄바꿈이 되지않습니다.
+-display:none 영역을 차지하지않고 화면에 출력을 안함  
+-visivility:hidden 영역을 차지하며 빈공간을 주는것.,
+
+5.13-1 구현 하시오.
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        div {
+            border:1px solid #cccccc;
+            padding:5px; margin:5px;
+            text-align:center;
+        }
+
+        #con {
+            width:800px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+
+        #header {
+            width:780px; height:100px;
+            line-height:100px;
+        }
+
+        #nav {
+            width:780px; height:100px;
+        }
+
+        #nav ul { overflow:hidden; }
+
+        #nav ul li {
+            width:138px; height:40px;
+            line-height:40px;
+            text-align:center;
+            list-style:none;
+            float:left;
+            border:1px solid #dddddd;
+        }
+
+        #wrap {
+            width:780px; 
+            overflow:hidden;
+        }
+
+        #content {
+            width:600px; height:300px;
+            float:left;
+        }
+
+        #banner {
+            width:135px; height:300px;
+            float:left;
+        }
+
+        #footer {
+            width:780px; height:100px;
+            line-height:100px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="con">
+        <div id="header">
+            HEADER
+        </div>
+
+        <div id="nav">
+            <p>NAVIGATION</p>
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+            </ul>
+        </div>
+
+        <div id="wrap">
+            <div id="content"> CONTENT </div>
+            <div id="banner"> BANNER </div>
+        </div>
+
+        <div id="footer">
+            FOOTER
+        </div>
+    </div>
+</body>
+</html>

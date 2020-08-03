@@ -1,0 +1,64 @@
+1.자바스크립트에서 아래를 예를 들어 설명하시오.
+-함수 안에 함수
+funtion outFun(width,height){
+console.log("triangle : " + triangle());
+console.log("quadrangle : " + quadrangle());
+function triangle() {
+return (width * height) / 2;
+}
+function quadrangle() {
+}
+}
+outFun(3, 5);
+
+-콜백함수
+function funName(funCBF, funCBP, num){
+for(var i=1; i<=10; i++) {
+console.log(num + " * " + i + " = " + (num * i));
+if(i < 10) funCBP(i);
+}
+funCBF();
+}
+function funCallBackProgress(n){
+console.log((n * 10) + "% 진행 완료!");
+};
+function funCallBackFinish(){
+console.log("서버 작업 종료!");
+};
+funName(funCallBackFinish, funCallBackProgress, 7);
+
+-클로저
+function funName(x){
+var varName = ":: 요청한 " + x + "에 대한 구구단::";
+return function() {
+console.log(varName);
+for(var i=1; i<10; i++){
+console.log(x + " * " + i + " = " + (x*i));
+}
+};
+}
+var returnFun = funName(5);
+returnFun();
+2.Environment객체를 이용해서 스프링 빈 설정을 위한 아래의 객체를 설명하시오.
+-Context
+-Environment
+-PropertySources
+
+3.Environment객체를 사용하지 않고 프로퍼티 파일을 직접 이용하여 스프링 빈을 설정하는 방법은?
+-스프링 설정 xml파일에 프로퍼티 파일을 명시하는 방법
+-스프링 설정 JAVA파일에 프로퍼티 파일을 명시하는 방법 
+4.아래와 같이 원의 넓이를 구하는 프로그램을 자바스크립트로 작성하시오.
+입력은 prompt 로 받으시오.
+
+원의 반지름을 입력하세요 : 10
+원의 넓이는 314 입니다.
+계속 하시겠습니까 yes면 y No이면 n: y
+원의 반지름을 입력하세요 : 10
+원의 넓이는 314 입니다.
+계속 하시겠습니까 yes면 y No이면 n: n
+프로그램을 종료 합니다.
+
+5. 아래의 내장 함수에 대하여 설명하시오.
+-eval()
+-setTimeout()
+-setInterval()

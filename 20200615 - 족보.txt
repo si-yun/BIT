@@ -1,0 +1,86 @@
+1. 아래의 ThreadWithClass 와 ThreadWithRunnable 을 구현하시오.
+
+public class Thread01 {
+
+    public static void main(String[] args){
+
+        ThreadWithClass thread1 = new ThreadWithClass();       // Thread 클래스를 상속받는 방법
+
+        Thread thread2 = new Thread(new ThreadWithRunnable()); // Runnable 인터페이스를 구현하는 방법 
+
+        thread1.start(); // 스레드의 실행
+        thread2.start(); // 스레드의 실행
+    }
+}
+
+
+
+class ThreadwithClass extends Thread{
+	
+	@Override
+	public void run() {
+		
+		for (int i = 0; i < 5; i++) {
+            System.out.println(getName());
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+			
+	}
+}
+class Threadwithrunnable implements Runnable {
+
+	@Override
+    public void run() {
+
+        for (int i = 0; i < 5; i++) {
+
+            System.out.println(Thread.currentThread().getName()); // 현재 실행 중인 스레드의 이름을 반환함.
+
+            try {
+
+                Thread.sleep(10);
+
+            } catch (InterruptedException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
+
+    }
+
+}
+public class ThreadTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ThreadwithClass thread1 = new ThreadwithClass();
+		Thread thread2 = new Thread(new Threadwithrunnable());
+		
+		thread1.start();
+		thread2.start();
+	}
+
+}
+2.웹서와 WAS에 대하여 설명하시오.
+
+소프트웨어와 하드웨어로 구분된다 
+1)하드웨어 -wep서버가 설치되어있는 컴퓨터
+2)소프트웨어 -웹브라우저 클라이언트로부터 HTTP요청을 받아 
+정적인 컨텐츠(HTML,JPEG,CSS)등을 제공하는 컴퓨터프로그램
+
+DB조회나 다양한 로직처리를 요구하는 동적인 컨텐츠를 제공하기위해 만들어진 Application Server
+HTTP를 통해 컴퓨터 장치에 어ㅠㅡ리케이션을 수행해주는 미들웨어(소프트웨어 엔진)임
+웹컨테이너(wep container)혹은 서블릿컨테이너(servlet container)라고불림.
+
+3. .jsp 와 .html 의 차이는?
+ HTML은 바로 브라우저에 보여지는 반면 JSP는 서버에서 compile을 한후에 
+HTML형식 파일로 결과값이 브라우저(클라이언트)에게 보여지게함
+
+4.html 8장 - 조별 학습
+읭?
